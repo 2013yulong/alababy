@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)https://sunweiguang224.github.io/cross-universe/cross-universe-dist3/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>alabaobao</title>
+	
+	
+	<!-- 如果当前环境是IE则设置为IE最高版本 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<!-- 设置视口大小与屏幕相同 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<!-- 禁止缓存 -->
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-store, must-revalidate">
+	<meta http-equiv="expires" content="0">
+	<!-- 禁止识别电话号，邮件，地点(跳转至地图) -->
+	<meta name="format-detection" content="telephone=no, email=no, adress=no" searchtype="map">
+	<!-- 删除默认的苹果工具栏和菜单栏 -->
+	<meta name="apple-mobile-web-app-capable" content="no">
+	<!-- 控制状态栏显示样式 -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="white">
+	<!-- 网站icon -->
+	<link rel="shortcut icon" href="https://sunweiguang224.github.io/cross-universe/cross-universe-dist3/img/favicon.ico">
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+	</style>
+<style>#haloword-pron { background: url(chrome-extension://bhkcehpnnlgncpnefpanachijmhikocj/img/icon.svg) -94px -34px; }#haloword-pron:hover { background: url(chrome-extension://bhkcehpnnlgncpnefpanachijmhikocj/img/icon.svg) -111px -34px; }#haloword-open { background: url(chrome-extension://bhkcehpnnlgncpnefpanachijmhikocj/img/icon.svg) -94px -17px; }#haloword-open:hover { background: url(chrome-extension://bhkcehpnnlgncpnefpanachijmhikocj/img/icon.svg) -111px -17px; }#haloword-close { background: url(chrome-extension://bhkcehpnnlgncpnefpanachijmhikocj/img/icon.svg) -94px 0; }#haloword-close:hover { background: url(chrome-extension://bhkcehpnnlgncpnefpanachijmhikocj/img/icon.svg) -111px 0; }#haloword-add { background: url(chrome-extension://bhkcehpnnlgncpnefpanachijmhikocj/img/icon.svg) -94px -51px; }#haloword-add:hover { background: url(chrome-extension://bhkcehpnnlgncpnefpanachijmhikocj/img/icon.svg) -111px -51px; }#haloword-remove { background: url(chrome-extension://bhkcehpnnlgncpnefpanachijmhikocj/img/icon.svg) -94px -68px; }#haloword-remove:hover { background: url(chrome-extension://bhkcehpnnlgncpnefpanachijmhikocj/img/icon.svg) -111px -68px; }</style></head>
+<body>
+<div style="display: none;">
+<img src="./cross-universe_files/title-icon.jpg" width="80%" height="100%">
+</div>
+<script src="./cross-universe_files/three.min.js"></script>
+<script>
+	var randomFloat=function(b,a){return Math.random()*(a-b)+b
+	};
+	var randomPos=function(d,a,c){for(var b=randomFloat(d,a);
+																		b>c||b<-c;
+																		b=randomFloat(d,a)){return b
+	}};
+	var rendererWidth=document.documentElement.clientWidth<640?document.documentElement.clientWidth:640,rendererHeight=document.documentElement.clientHeight,cameraMaxZ=1000,cameraStartZ=cameraMaxZ/3,geometryCountRound=50,geometryCountCenter=20;
+	var scene=new THREE.Scene();
+	var geometry=new THREE.BoxBufferGeometry(cameraMaxZ*2,cameraMaxZ*2,1);
+	var texture=new THREE.TextureLoader().load("./img/universe.jpg");
+	var material=new THREE.MeshBasicMaterial({map:texture});
+	scene.add(new THREE.Mesh(geometry,material));
+	var geometry=new THREE.PlaneBufferGeometry(30,30);
+	var materialArr=[];
+	for(var i=1;
+			i<=11;
+			i++){var textureLoader=new THREE.TextureLoader().load("./img/"+i+".png");
+		var material=new THREE.MeshBasicMaterial({map:textureLoader});
+		material.transparent=true;
+		materialArr.push(material)
+	}for(var i=0;
+			 i<geometryCountRound;
+			 i++){var mesh=new THREE.Mesh(geometry,materialArr[Math.floor(randomFloat(0,materialArr.length-1))]);
+		mesh.position.x=randomPos(-300,300,30);
+		mesh.position.y=randomPos(-300,300,30);
+		mesh.position.z=cameraStartZ-200+(cameraMaxZ-cameraStartZ)*i/geometryCountRound;
+		scene.add(mesh)
+	}for(var i=0;
+			 i<geometryCountCenter-1;
+			 i++){var mesh=new THREE.Mesh(geometry,materialArr[Math.floor(randomFloat(0,materialArr.length-1))]);
+		mesh.position.x=randomPos(-15,15,1);
+		mesh.position.y=randomPos(-15,15,1);
+		mesh.position.z=(cameraStartZ-50)+(cameraMaxZ-cameraStartZ)*i/geometryCountCenter;
+		scene.add(mesh)
+	}var geometry=new THREE.PlaneBufferGeometry(30,10);
+	var textureLoader=new THREE.TextureLoader().load("./img/name.png");
+	var material=new THREE.MeshBasicMaterial({map:textureLoader});
+	material.transparent=true;
+	var wordMesh=new THREE.Mesh(geometry,material);
+	wordMesh.position.x=0;
+	wordMesh.position.y=20;
+	wordMesh.position.z=cameraMaxZ-60;
+	scene.add(wordMesh);
+	var camera=new THREE.PerspectiveCamera(90,window.innerWidth/window.innerHeight,0.1,cameraMaxZ);
+	camera.position.z=cameraStartZ;
+	var renderer=new THREE.WebGLRenderer({antialias:false,precision:"highp",alpha:true,premultipliedAlpha:false,stencil:false,preserveDrawingBuffer:true,maxLights:1});
+	renderer.setSize(rendererWidth,rendererHeight);
+	renderer.setClearColor(0,0.9);
+	document.body.appendChild(renderer.domElement);
+	var wordRotateRatio=1;
+	function wordRotateAnimate(){if(!wordMesh){return
+	}wordMesh.rotation.z=wordMesh.rotation.z+wordRotateRatio;
+		wordRotateRatio-=0.005;
+		if(wordRotateRatio>0){window.requestAnimationFrame(arguments.callee)
+		}else{wordMesh.rotation.z=0
+		}renderer.render(scene,camera)
+	}function start(){camera.position.z+=1;
+		renderer.render(scene,camera);
+		if(camera.position.z+1<cameraMaxZ){window.requestAnimationFrame(arguments.callee)
+		}else{wordRotateAnimate()
+		}}start();
+</script><canvas width="320" height="568" style="width: 320px; height: 568px;"></canvas>
+
+<div id="cli_dialog_div"></div><div id="haloword-lookup" class="ui-widget-content ui-draggable"><div id="haloword-title"><span id="haloword-word"></span><a herf="#" id="haloword-pron" class="haloword-button" title="发音"></a><audio id="haloword-audio"></audio><div id="haloword-control-container"><a herf="#" id="haloword-add" class="haloword-button" title="加入单词表"></a><a herf="#" id="haloword-remove" class="haloword-button" title="移出单词表"></a><a href="https://sunweiguang224.github.io/cross-universe/cross-universe-dist3/index.html#" id="haloword-open" class="haloword-button" title="查看单词详细释义" target="_blank"></a><a herf="#" id="haloword-close" class="haloword-button" title="关闭查询窗"></a></div><br style="clear: both;"></div><div id="haloword-content"></div></div></body></html>
