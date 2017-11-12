@@ -52,7 +52,7 @@
                 heading.html(food+"！吃这个干吗，咋吃？怎么吃？那好吧，<b>为了让你开心，下次吧</b>"+"主要这次吃这个太贵了");
                 lablePeople = 0;
             }else{
-                heading.html("吃啥？吃啥呢？就这个了吧！");
+                heading.html("吃啥？啥呢？就这个了吧！");
             }
             $(this).val("不行，换一个");
             clearInterval(timer);

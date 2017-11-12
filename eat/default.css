@@ -22,12 +22,9 @@ body {
 
 #wrapper {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -60px;
-    margin-left: -250px;
-    width: 500px;
-    height: 120px;
+    top: 40%;
+    left: 5%;
+    max-width: 500px;
     text-align: center;
 }
 
@@ -51,8 +48,22 @@ body {
     cursor: pointer;
     color: rgba(3, 119, 3, 0.73);
     background: rgba(67, 245, 9, 0.1);
+    animation: fadeInUp 3s infinite;
 }
-
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 #cfg {
     color: #666;
     text-shadow: 1px 1px 1px #eee;
@@ -106,4 +117,12 @@ body {
 }
 #yaoyiyaoyes{
     opacity: .5;
+}
+.WB_widget.WB_follow_ex.WB_floatContainer {
+    background: #fff;
+    position: absolute;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px #000;
 }
