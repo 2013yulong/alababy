@@ -48,8 +48,10 @@ body {
     vertical-align: middle;
     font-family: "微软雅黑";
     cursor: pointer;
-    color: rgba(3, 119, 3, 0.73);
-    background: rgba(67, 245, 9, 0.1);
+    // color: rgba(3, 119, 3, 0.73);
+    // background: rgba(67, 245, 9, 0.1);
+    color: #03a9f4;
+    background: rgb(33 150 243 / 16%);
     animation: fadeInUp 3s infinite;
 }
 @-webkit-keyframes fadeInUp {
