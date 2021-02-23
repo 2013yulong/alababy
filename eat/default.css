@@ -112,6 +112,7 @@ body {
     position: absolute;
     bottom: 10px;
     right: 10px;
+    opcity:.1;
 }
 .yao{
     position: fixed;
