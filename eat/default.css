@@ -120,7 +120,12 @@ body {
     color: #ccc;
 }
 #yaoyiyaoyes{
-    opacity: .5;
+    opacity: .3;
+    font-size: 16px;
+    margin: 10px;
+    line-height: 30px;
+    position: absolute;
+    bottom: 10px;
 }
 .WB_widget.WB_follow_ex.WB_floatContainer {
     background: #fff;
