@@ -117,11 +117,12 @@ function deviceMotionHandler(eventData) {
 　　　　　　$("#yaoyiyaoyes").hide();  
 　　　　　　$("#yaoyiyaoresult").show();  
 // 　　　　　　$("#yaoyiyaoresult").html("摇到了!第" + count + "个了！");
-　　　　　　$("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
+// 　　　　　　$("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
             $('#start').trigger('click');
             oneShake = setTimeout(function(){
                 $('#start').trigger('click');
-            },3000)
+                $("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
+            },3600)
 　　　　}  
   
 　　　　last_x = x;   
@@ -137,7 +138,7 @@ function deviceMotionHandler(eventData) {
 　　3、如果您都不属于以上两种情况，那我只有告诉您：您改换手机啦！！！</br>  
 </div>  
 <div id="yaoyiyaoyes" style="font-size:16px;margin:10px;line-height:30px;display:none;">  
-　　摇一摇吧，看看摇到啥？说不定有一大餐等着你呢，快来摇摇吧!  
+　　摇一摇吧，看看摇到啥？说不定有一顿大餐等着你呢，快来摇摇吧^_^!  
 </div>  
 <style type="text/css">
     #start{

@@ -55,7 +55,7 @@
                 heading.html(food+"！吃这个吗，这个行么？<b>要不下次吧</b>");
                 lablePeople = 0;
             }else{
-                heading.html("吃啥？啥呢？就这个了吧！");
+                heading.html("吃啥？这个？就这个了吧！");
             }
             $(this).val("不行，换一个");
             clearInterval(timer);
