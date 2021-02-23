@@ -113,16 +113,16 @@ function deviceMotionHandler(eventData) {
 　　　　if (speed > SHAKE_THRESHOLD) {   
 　　　　　　// TODO:在此处可以实现摇一摇之后所要进行的数据逻辑操作  
             clearTimeout(oneShake);
-　　　　　　count++;  
-　　　　　　$("#yaoyiyaoyes").hide();  
-　　　　　　$("#yaoyiyaoresult").show();  
-// 　　　　　　$("#yaoyiyaoresult").html("摇到了!第" + count + "个了！");
-// 　　　　　　$("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
+　　　　　　　count++;  
+　　　　　   $("#yaoyiyaoyes").hide();  
+            // 　　　　　　$("#yaoyiyaoresult").html("摇到了!第" + count + "个了！");
+            // 　　　　　　$("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
             $('#start').trigger('click');
             oneShake = setTimeout(function(){
                 $('#start').trigger('click');
                 // $("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
-            },3000)
+            　　 $("#yaoyiyaoresult").show();  
+            },3700)
 　　　　}  
   
 　　　　last_x = x;   
@@ -145,7 +145,7 @@ function deviceMotionHandler(eventData) {
         opacity: 0.1;
     }
 </style>
-<div id="yaoyiyaoresult" class="yaoyiyaoyes" style="font-size:16px;margin:10px;line-height:50px;display:none;">哇🤩，要到了耶(＾－＾)V</div>  
+<div id="yaoyiyaoresult" class="yaoyiyaoyes" style="font-size:16px;margin:10px;line-height:50px;display:none;">哇🤩，摇到了耶(＾－＾)V</div>  
 <script>  
 $(document).ready(function(){  
     init();  
