@@ -121,8 +121,8 @@ function deviceMotionHandler(eventData) {
             $('#start').trigger('click');
             oneShake = setTimeout(function(){
                 $('#start').trigger('click');
-                $("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
-            },3600)
+                // $("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
+            },3700)
 　　　　}  
   
 　　　　last_x = x;   
@@ -131,13 +131,13 @@ function deviceMotionHandler(eventData) {
 　　}   
 }   
 </script>  
-<div id="yaoyiyaono" style="font-size:16px;margin:10px;line-height:35px;display:none;">  
+<div id="yaoyiyaono"  class="yaoyiyaoyes"style="font-size:12px;margin:10px;line-height:20px;display:none;bottom:72px">  
 　　hello，如果您看到了我，说明您现在还不能摇，不是说您没有资格用我，而是：</br>  
-　　1、如果您使用PC机的浏览器，那可就不对了，我只爱手机浏览器；</br>  
-　　2、如果您是Android手机，那不好意思告诉你，android自带的浏览器抛弃了我，您可以用UCWeb、chrome等第三方浏览器；</br>  
-　　3、如果您都不属于以上两种情况，那我只有告诉您：您改换手机啦！！！</br>  
+　　1、如果您使用PC机的浏览器，那可就不对了，我只爱手机浏览器；不过您可以直接点击按钮进行智能选择</br>  
+　　2、如果您是Android手机，那不好意思告诉你，android自带的浏览器可能抛弃了我，您可以用微信等第三方浏览器；</br>  
+　　3、如果您都不属于以上两种情况，那我只有告诉您：您该换手机啦！！！</br>  
 </div>  
-<div id="yaoyiyaoyes" style="font-size:16px;margin:10px;line-height:30px;display:none;">  
+<div id="yaoyiyaoyes"  class="yaoyiyaoyes"style="font-size:16px;margin:10px;line-height:30px;">  
 　　摇一摇吧，看看摇到啥？说不定有一顿大餐等着你呢，快来摇摇吧^_^!  
 </div>  
 <style type="text/css">
@@ -145,7 +145,7 @@ function deviceMotionHandler(eventData) {
         opacity: 0.1;
     }
 </style>
-<div id="yaoyiyaoresult" style="font-size:16px;margin:10px;line-height:50px;display:none;"></div>  
+<div id="yaoyiyaoresult" class="yaoyiyaoyes" style="font-size:16px;margin:10px;line-height:50px;display:none;"></div>  
 <script>  
 $(document).ready(function(){  
     init();  

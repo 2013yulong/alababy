@@ -28,7 +28,8 @@
             }, 100);
             run = 1;
         } else {
-           heading.html(heading.html().replace("吃什么？", "吃这个吧！"));
+            heading.html(heading.html().replace("吃什么？", "吃这个吧！"));
+            $("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
             $(this).val("不行，换一个");
             clearInterval(timer);
             run = 0;

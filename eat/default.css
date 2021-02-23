@@ -50,9 +50,11 @@ body {
     cursor: pointer;
     // color: rgba(3, 119, 3, 0.73);
     // background: rgba(67, 245, 9, 0.1);
+    font-weight: 900;
     color: #03a9f4;
     background: rgb(33 150 243 / 16%);
     animation: fadeInUp 3s infinite;
+    border:0;
 }
 @-webkit-keyframes fadeInUp {
     0% {
@@ -120,7 +122,11 @@ body {
     left: 5px;
     color: #ccc;
 }
-#yaoyiyaoyes{
+#yaoyiyaoresult,
+#yaoyiyaono{
+    bottom: 72px;
+}
+.yaoyiyaoyes{
     opacity: .3;
     font-size: 16px;
     margin: 10px;
