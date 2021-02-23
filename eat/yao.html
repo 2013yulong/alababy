@@ -115,13 +115,16 @@ function deviceMotionHandler(eventData) {
             clearTimeout(oneShake);
 　　　　　　　count++;  
 　　　　　   $("#yaoyiyaoyes").hide();  
+            $("#yaoyiyaoresult").hide();  
+
             // 　　　　　　$("#yaoyiyaoresult").html("摇到了!第" + count + "个了！");
             // 　　　　　　$("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
             $('#start').trigger('click');
             oneShake = setTimeout(function(){
                 $('#start').trigger('click');
                 // $("#yaoyiyaoresult").html("恭喜你！摇到了耶O(∩_∩)O ");
-            　　 $("#yaoyiyaoresult").show();  
+　　　　　       $("#yaoyiyaoyes").hide();  
+            　　$("#yaoyiyaoresult").show();  
             },3700)
 　　　　}  
   
