@@ -21,11 +21,13 @@ body {
 // }
 
 #wrapper {
-    position: absolute;
-    top: 40%;
-    left: 5%;
-    max-width: 500px;
+    // position: absolute;
+    // top: 40%;
+    // left: 5%;
+    // max-width: 500px;
     text-align: center;
+    margin-top: 37%;
+}
 }
 
 #wrapper h1 {
